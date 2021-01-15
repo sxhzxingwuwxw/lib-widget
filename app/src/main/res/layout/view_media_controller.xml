@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--底图-->
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY" />
+    <!--加载动画-->
+    <LinearLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#11000000"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/loading_progress"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:background="@drawable/dialog_vui_loading" />
+
+        <TextView
+            android:id="@+id/load_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="正在缓冲..."
+            android:textColor="@android:color/white"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+    <!--改变播放位置-->
+    <LinearLayout
+        android:id="@+id/center_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_radius_5"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/center_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="@android:color/white"
+            android:textSize="28sp" />
+
+        <ImageView
+            android:id="@+id/center_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/center_progress"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="100dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            android:max="100"
+            android:progressDrawable="@drawable/pb_change2" />
+    </LinearLayout>
+
+    <!--播放错误-->
+    <LinearLayout
+        android:id="@+id/net_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/net_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="你正在使用移动网络播放，是否继续播放?"
+            android:textColor="@android:color/white"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/net_btn"
+            android:layout_width="74dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="继续播放"
+            android:textColor="@android:color/white"
+            android:textSize="12dp"
+            android:background="@drawable/lib_media_btn_selector_bg" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/error_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="播放错误，请重试。"
+            android:textColor="@android:color/white"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/retry"
+            android:layout_width="74dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="刷新重试"
+            android:textColor="@android:color/white"
+            android:textSize="12dp"
+            android:background="@drawable/lib_media_btn_selector_bg" />
+    </LinearLayout>
+
+    <!--底部控制区-->
+    <RelativeLayout
+        android:id="@+id/controller_layout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/player_mask_bottom2"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_alignParentBottom="true"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
+
+            <ImageView
+                android:id="@+id/media_start_btn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:src="@drawable/ic_media_play" />
+
+            <TextView
+                android:id="@+id/media_cur_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/media_start_btn"
+                android:text="00:00"
+                android:textColor="@android:color/white"
+                android:textSize="12dp" />
+
+            <SeekBar
+                android:id="@+id/seek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_toLeftOf="@+id/media_all_time"
+                android:layout_toRightOf="@+id/media_cur_time"
+                android:background="@null"
+                android:max="0"
+                android:maxHeight="1.5dp"
+                android:minHeight="1.5dp"
+                android:progressDrawable="@drawable/seek_bar_media"
+                android:thumb="@drawable/seek_bar_thumb" />
+
+            <TextView
+                android:id="@+id/media_all_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/full_screen"
+                android:text="00:00"
+                android:textColor="@android:color/white"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:id="@+id/full_screen"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:src="@drawable/ic_media_screen" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/video_finish_cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_video_watch_tip" />
+
+        <LinearLayout
+            android:id="@+id/video_restart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="39dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="13dp"
+                android:layout_height="15dp"
+                android:background="@drawable/icon_video_watch_refresh" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="免费试看"
+                android:textColor="@android:color/white"
+                android:textSize="11dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/media_back"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:padding="10dp"
+        android:src="@drawable/ic_player_back2" />
+
+</RelativeLayout>

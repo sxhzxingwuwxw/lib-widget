@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="VPI_ViewPagerIndicator">
+        <!-- Style of the underline indicator. -->
+        <attr name="vpiUnderlinePageIndicatorStyle" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="UnderlinePageIndicator">
+        <!-- Whether or not the selected indicator fades. -->
+        <attr name="fades" format="boolean" />
+        <!-- Length of the delay to fade the indicator. -->
+        <attr name="fadeDelay" format="integer" />
+        <!-- Length of the indicator fade to transparent. -->
+        <attr name="fadeLength" format="dimension" />
+        <!-- Color of the selected line that represents the current page. -->
+        <attr name="selectedColor"  format="color"/>
+        <attr name="vpi_length" format="dimension" />
+        <!-- View background -->
+        <attr name="android:background"/>
+        <attr name="bottom_line_color" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="ExpandIconView">
+        <attr name="eiv_roundedCorners" format="boolean" />
+        <attr name="eiv_switchColor" format="boolean" />
+        <attr name="eiv_color" format="color" />
+        <attr name="eiv_colorMore" format="color" />
+        <attr name="eiv_colorLess" format="color" />
+        <attr name="eiv_colorIntermediate" format="color" />
+        <attr name="eiv_animationDuration" format="integer" />
+        <attr name="eiv_padding" format="dimension" />
+        <attr name="eiv_width" format="dimension" />
+        <attr name="eiv_height" format="dimension" />
+        <attr name="eiv_text" format="string" />
+        <attr name="eiv_text_size" format="dimension" />
+        <attr name="eiv_padding_left" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="TabViewGroup">
+        <attr name="text_color_select" format="color" />
+        <attr name="text_color_default" format="color" />
+    </declare-styleable>
+</resources>

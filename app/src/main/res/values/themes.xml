@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="ExpandTextViewStyle">
+        <item name="android:textColor">#80000000</item>
+        <item name="android:textSize">16dp</item>
+        <item name="eiv_width">24dp</item>
+        <item name="eiv_height">24dp</item>
+        <item name="eiv_animationDuration">300</item>
+        <item name="eiv_color">#000</item>
+        <item name="eiv_colorLess">#696969</item>
+        <item name="eiv_colorMore">#696969</item>
+        <item name="eiv_roundedCorners">false</item>
+        <item name="eiv_switchColor">true</item>
+    </style>
+
+    <bool name="default_underline_indicator_fades">true</bool>
+    <integer name="default_underline_indicator_fade_delay">300</integer>
+    <integer name="default_underline_indicator_fade_length">400</integer>
+    <color name="default_underline_indicator_selected_color">#FF33B5E5</color>
+
+    <style name="customDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+</resources>
